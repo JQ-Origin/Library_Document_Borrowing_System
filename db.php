@@ -1,9 +1,16 @@
 <?php
+/*
+ * @Author: OriginYu
+ * @Date: 2025-06-13 15:34:56
+ * @LastEditors: OriginYu
+ * @LastEditTime: 2025-06-13 15:35:39
+ * @Description: 
+ * @FilePath: \Library_Document_Borrowing_System\db.php
+ */
 $servername = 'localhost';
 $username = 'library_admin';
 $password = 'library_passwd';
 $dbname = 'library';
-
 // 创建数据库连接
 $conn = new mysqli($servername, $username, $password, $dbname);
 
