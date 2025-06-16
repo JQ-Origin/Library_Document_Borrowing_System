@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once 'config/db.php';
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -22,10 +22,10 @@ $role = $_SESSION['role'];
             <a class="navbar-brand" href="#">图书馆管理系统</a>
             <div class="navbar-nav">
                 <?php if ($role === 'user'): ?>
-                    <a class="nav-link" href="user_center.php">个人中心</a>
+                    <a class="nav-link" href="user/user_center.php">个人中心</a>
                 <?php elseif ($role === 'admin'): ?>
-                    <a class="nav-link" href="book_manage.php">图书管理</a>
-                    <a class="nav-link" href="borrow_manage.php">借阅管理</a>
+                    <a class="nav-link" href="admin/book_manage.php">图书管理</a>
+                    <a class="nav-link" href="admin/borrow_manage.php">借阅管理</a>
                 <?php endif; ?>
                 <a class="nav-link" href="logout.php">退出登录</a>
             </div>
@@ -66,7 +66,7 @@ $role = $_SESSION['role'];
                         我的借阅
                     </div>
                     <div class="card-body">
-                        <?php include 'user_borrow.php'; ?>
+                        <?php include 'user/user_borrow.php'; ?>
                     </div>
                 </div>
                     <div class="card-header">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once 'config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             // 根据角色跳转到不同页面
             if ($role === 'admin') {
-                header("Location: admin_dashboard.php");
+                header("Location: admin/admin_dashboard.php");
             } else {
                 header("Location: index.php");
             }
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <button type="submit" class="btn btn-primary w-100">登录</button>
                 </form>
                 <div class="mt-3 text-center">
-                    没有账号？<a href="register.php">普通用户注册</a> | <a href="admin_register.php" class="text-danger">管理员注册</a>
+                    没有账号？<a href="register.php">普通用户注册</a> | <a href="admin/admin_register.php" class="text-danger">管理员注册</a>
                 </div>
                 <?php if (isset($_GET['msg']) && $_GET['msg'] === 'admin_registered'): ?>
                     <div class="alert alert-success mt-3">

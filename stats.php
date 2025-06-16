@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once 'config/db.php';
 
 // 权限验证
 if ($_SESSION['role'] !== 'admin') {
@@ -35,7 +35,7 @@ $popular_books = $conn->query("SELECT b.title, COUNT(br.id) AS borrow_count
         <div class="container">
             <a class="navbar-brand" href="index.php">图书馆管理系统</a>
             <div class="navbar-nav">
-                <a class="nav-link" href="book_manage.php">图书管理</a>
+                <a class="nav-link" href="admin/book_manage.php">图书管理</a>
                 <a class="nav-link" href="stats.php">统计报表</a>
                 <a class="nav-link" href="logout.php">退出登录</a>
             </div>
