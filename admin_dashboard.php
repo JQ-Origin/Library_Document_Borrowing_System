@@ -13,7 +13,7 @@ $role = $_SESSION['role'];
 $stats = [];
 try {
     // 总图书数
-    $stmt = $conn->prepare("SELECT COUNT(*) as total_books FROM books");
+    $stmt = $conn->prepare("SELECT SUM(total) as total_books FROM books");
     $stmt->execute();
     $result = $stmt->get_result();
     $stats['total_books'] = $result->fetch_assoc()['total_books'];

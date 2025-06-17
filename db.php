@@ -13,7 +13,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // 用户统计函数
 function getActiveUsers() {
     global $conn;
-    $result = $conn->query("SELECT COUNT(*) AS count FROM users WHERE status=1");
+    $result = $conn->query("SELECT COUNT(*) AS count FROM users");
     return $result ? $result->fetch_assoc()['count'] : 0;
 }
 
